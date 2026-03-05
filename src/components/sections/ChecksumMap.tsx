@@ -7,11 +7,11 @@ interface ChecksumMapProps {
 export default function ChecksumMap({ checksumNibbles }: ChecksumMapProps) {
   return (
     <div>
-      <div className="text-xs text-ink-300 tracking-[0.2em] uppercase mb-3">
+      <div className="text-2xs text-ink-300 tracking-[0.2em] uppercase mb-3">
         VII. EIP-55 Checksum Map
       </div>
-      <div className="border border-ink-100 p-3">
-        <div className="grid grid-cols-[repeat(40,1fr)] text-2xs text-ink-200 mb-0.5">
+      <div className="border border-ink-100 p-2">
+        <div className="grid grid-cols-[repeat(40,1fr)] text-3xs text-ink-200 mb-0.5">
           {checksumNibbles.map((_, i) => (
             <span key={i} className="text-center truncate">
               {i.toString().padStart(2, '0')}
@@ -22,7 +22,7 @@ export default function ChecksumMap({ checksumNibbles }: ChecksumMapProps) {
           {checksumNibbles.map((n, i) => (
             <span
               key={i}
-              className={`text-center text-sm font-medium truncate ${
+              className={`text-center text-xs font-medium truncate ${
                 n.isUpper ? 'text-ink-500' : 'text-ink-200'
               }`}
             >
@@ -34,7 +34,7 @@ export default function ChecksumMap({ checksumNibbles }: ChecksumMapProps) {
           {checksumNibbles.map((n, i) => (
             <span
               key={i}
-              className={`text-center text-2xs truncate ${
+              className={`text-center text-3xs truncate ${
                 n.isUpper ? 'text-ink-400' : 'text-ink-100'
               }`}
             >
@@ -46,7 +46,7 @@ export default function ChecksumMap({ checksumNibbles }: ChecksumMapProps) {
           {checksumNibbles.map((n, i) => (
             <span
               key={i}
-              className={`text-center text-2xs truncate ${
+              className={`text-center text-3xs truncate ${
                 n.isUpper ? 'text-ink-400' : 'text-ink-100'
               }`}
             >

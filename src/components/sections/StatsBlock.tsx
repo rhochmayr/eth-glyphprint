@@ -22,36 +22,36 @@ export default function StatsBlock({
 
   return (
     <div>
-      <div className="text-xs text-ink-300 tracking-[0.2em] uppercase mb-3">
+      <div className="text-2xs text-ink-300 tracking-[0.2em] uppercase mb-3">
         IX. Statistical Properties
       </div>
       <div className="border border-ink-100">
         {stats.map((s, i) => (
           <div
             key={s.label}
-            className={`flex justify-between px-3 py-1.5 ${
+            className={`flex justify-between px-2 py-1 ${
               i < stats.length - 1 ? 'border-b border-ink-50' : ''
             }`}
           >
-            <span className="text-2xs text-ink-300">{s.label}</span>
-            <span className="text-2xs font-medium">{s.value}</span>
+            <span className="text-3xs text-ink-300">{s.label}</span>
+            <span className="text-3xs font-medium">{s.value}</span>
           </div>
         ))}
       </div>
 
       <div className="mt-3">
-        <div className="text-2xs text-ink-300 mb-1.5">MODULAR RESIDUES</div>
+        <div className="text-3xs text-ink-300 mb-1.5">MODULAR RESIDUES</div>
         <div className="border border-ink-100">
           <div className="flex flex-wrap">
             {moduloResidues.map((m, i) => (
               <div
                 key={m.prime}
-                className={`flex-1 min-w-[25%] px-2 py-1.5 text-center ${
+                className={`flex-1 min-w-[25%] px-2 py-1 text-center ${
                   i < moduloResidues.length - 1 ? 'border-r border-ink-50' : ''
                 } ${i < 8 ? 'border-b border-ink-50' : ''}`}
               >
-                <div className="text-2xs text-ink-200">mod {m.prime}</div>
-                <div className="text-2xs font-medium">{m.residue}</div>
+                <div className="text-3xs text-ink-200">mod {m.prime}</div>
+                <div className="text-3xs font-medium">{m.residue}</div>
               </div>
             ))}
           </div>

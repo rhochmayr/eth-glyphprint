@@ -34,7 +34,7 @@ export default function EncodingTable({
 
   return (
     <div>
-      <div className="text-xs text-ink-300 tracking-[0.2em] uppercase mb-3">
+      <div className="text-2xs text-ink-300 tracking-[0.2em] uppercase mb-3">
         II. Encodings
       </div>
       <div className="border border-ink-100">
@@ -43,11 +43,11 @@ export default function EncodingTable({
             key={enc.label}
             className={`flex ${i < encodings.length - 1 ? 'border-b border-ink-100' : ''}`}
           >
-            <div className="w-24 shrink-0 px-2 py-1.5 text-2xs text-ink-300 border-r border-ink-100 flex items-start">
+            <div className="w-20 shrink-0 px-2 py-1.5 text-3xs text-ink-300 border-r border-ink-100 flex items-start">
               {enc.label}
             </div>
-            <div className="px-2 py-1.5 text-2xs break-all leading-relaxed min-w-0">
-              {wrapLine(enc.value, 80).map((line, j) => (
+            <div className="px-2 py-1.5 text-3xs break-all leading-relaxed min-w-0">
+              {wrapLine(enc.value, 64).map((line, j) => (
                 <div key={j}>{line}</div>
               ))}
             </div>
