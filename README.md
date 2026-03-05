@@ -38,4 +38,4 @@ All computation happens client-side. No data leaves the browser.
 - Tailwind CSS
 - `js-sha3` for Keccak-256 hashing
 - Web Crypto API for SHA-256 / SHA-512
-- `html-to-image` for PNG export.
+- `html-to-image` for PNG export
