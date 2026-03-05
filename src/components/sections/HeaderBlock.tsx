@@ -8,28 +8,28 @@ export default function HeaderBlock({ address, checksummed, timestamp }: HeaderB
   const chars = checksummed.replace('0x', '').split('');
 
   return (
-    <div className="col-span-full border-b border-ink-200 pb-8 mb-2">
+    <div className="col-span-full border-b border-ink-200 pb-10 mb-2">
       <div className="flex items-baseline justify-between mb-6">
-        <span className="text-2xs tracking-[0.3em] uppercase text-ink-300">
+        <span className="text-xs tracking-[0.3em] uppercase text-ink-300">
           ETH Glyphprint
         </span>
-        <span className="text-2xs text-ink-200">
+        <span className="text-xs text-ink-200">
           {timestamp.split('T')[0]}
         </span>
       </div>
 
-      <div className="mb-6">
-        <div className="text-2xs text-ink-300 tracking-[0.2em] uppercase mb-3">
+      <div className="mb-8">
+        <div className="text-xs text-ink-300 tracking-[0.2em] uppercase mb-4">
           I. Address
         </div>
-        <div className="flex items-baseline gap-1">
-          <span className="text-xs text-ink-300">0x</span>
+        <div className="flex items-baseline gap-2">
+          <span className="text-sm text-ink-300">0x</span>
           <div className="flex flex-wrap">
             {chars.map((c, i) => (
               <span
                 key={i}
-                className="text-xl md:text-2xl lg:text-3xl font-light tracking-[0.15em] leading-tight"
-                style={{ opacity: 0.5 + (parseInt(c, 16) / 15) * 0.5 }}
+                className="text-5xl font-light tracking-[0.2em] leading-tight"
+                style={{ opacity: 0.4 + (parseInt(c, 16) / 15) * 0.6 }}
               >
                 {c}
               </span>
@@ -38,7 +38,7 @@ export default function HeaderBlock({ address, checksummed, timestamp }: HeaderB
         </div>
       </div>
 
-      <div className="flex flex-wrap gap-x-8 gap-y-1 text-3xs text-ink-300">
+      <div className="flex flex-wrap gap-x-10 gap-y-1 text-2xs text-ink-300 tracking-wider">
         <span>CHECKSUM: {checksummed}</span>
         <span>LENGTH: {address.length} chars</span>
         <span>BYTES: 20</span>

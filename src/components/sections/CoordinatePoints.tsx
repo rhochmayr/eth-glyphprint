@@ -7,21 +7,21 @@ interface CoordinatePointsProps {
 export default function CoordinatePoints({ coordinates }: CoordinatePointsProps) {
   return (
     <div>
-      <div className="text-2xs text-ink-300 tracking-[0.2em] uppercase mb-3">
+      <div className="text-xs text-ink-300 tracking-[0.2em] uppercase mb-3">
         VIII. Derived Coordinates
       </div>
       <div className="border border-ink-100">
         <div className="flex border-b border-ink-200 bg-paper-100">
-          <div className="w-8 px-1 py-1 text-3xs text-ink-300 text-center border-r border-ink-100">
+          <div className="w-10 px-1 py-1 text-2xs text-ink-300 text-center border-r border-ink-100">
             PT
           </div>
-          <div className="w-12 px-1 py-1 text-3xs text-ink-300 text-center border-r border-ink-100">
+          <div className="w-14 px-1 py-1 text-2xs text-ink-300 text-center border-r border-ink-100">
             X
           </div>
-          <div className="w-12 px-1 py-1 text-3xs text-ink-300 text-center border-r border-ink-100">
+          <div className="w-14 px-1 py-1 text-2xs text-ink-300 text-center border-r border-ink-100">
             Y
           </div>
-          <div className="flex-1 px-1 py-1 text-3xs text-ink-300 text-center">
+          <div className="flex-1 px-1 py-1 text-2xs text-ink-300 text-center">
             (X, Y) NORMALIZED
           </div>
         </div>
@@ -30,24 +30,24 @@ export default function CoordinatePoints({ coordinates }: CoordinatePointsProps)
             key={i}
             className={`flex ${i < coordinates.length - 1 ? 'border-b border-ink-50' : ''}`}
           >
-            <div className="w-8 px-1 py-0.5 text-3xs text-ink-200 text-center border-r border-ink-50">
+            <div className="w-10 px-1 py-0.5 text-2xs text-ink-200 text-center border-r border-ink-50">
               P{coord.index}
             </div>
-            <div className="w-12 px-1 py-0.5 text-3xs text-center border-r border-ink-50">
+            <div className="w-14 px-1 py-0.5 text-2xs text-center border-r border-ink-50">
               {coord.x.toString().padStart(3, ' ')}
             </div>
-            <div className="w-12 px-1 py-0.5 text-3xs text-center border-r border-ink-50">
+            <div className="w-14 px-1 py-0.5 text-2xs text-center border-r border-ink-50">
               {coord.y.toString().padStart(3, ' ')}
             </div>
-            <div className="flex-1 px-1 py-0.5 text-3xs text-center text-ink-300">
+            <div className="flex-1 px-1 py-0.5 text-2xs text-center text-ink-300">
               ({(coord.x / 255).toFixed(4)}, {(coord.y / 255).toFixed(4)})
             </div>
           </div>
         ))}
       </div>
 
-      <div className="border border-ink-100 mt-3 p-2">
-        <div className="text-3xs text-ink-200 mb-1">COORDINATE PLOT (256 x 256)</div>
+      <div className="border border-ink-100 mt-3 p-3">
+        <div className="text-2xs text-ink-200 mb-1">COORDINATE PLOT (256 x 256)</div>
         <div className="relative w-full aspect-square bg-paper-100 border border-ink-50">
           {coordinates.map((coord, i) => (
             <div
@@ -59,8 +59,8 @@ export default function CoordinatePoints({ coordinates }: CoordinatePointsProps)
                 transform: 'translate(-50%, -50%)',
               }}
             >
-              <div className="w-1 h-1 bg-ink-500 rounded-full" />
-              <span className="absolute top-1.5 left-1.5 text-3xs text-ink-300">
+              <div className="w-1.5 h-1.5 bg-ink-500 rounded-full" />
+              <span className="absolute top-2 left-2 text-2xs text-ink-300">
                 {i}
               </span>
             </div>

@@ -12,43 +12,43 @@ export default function XorFoldBlock({ bare, xorFold, byteDensity }: XorFoldBloc
 
   return (
     <div>
-      <div className="text-2xs text-ink-300 tracking-[0.2em] uppercase mb-3">
+      <div className="text-xs text-ink-300 tracking-[0.2em] uppercase mb-3">
         XIII. XOR Fold & Byte Density
       </div>
 
-      <div className="border border-ink-100 p-2 mb-3">
-        <div className="text-3xs text-ink-200 mb-2">
+      <div className="border border-ink-100 p-3 mb-3">
+        <div className="text-2xs text-ink-200 mb-2">
           First 10 bytes XOR last 10 bytes
         </div>
         <div className="space-y-1">
           <div className="flex items-center gap-2">
-            <span className="w-8 text-3xs text-ink-200 text-right shrink-0">
+            <span className="w-10 text-2xs text-ink-200 text-right shrink-0">
               HI
             </span>
-            <span className="text-3xs tracking-[0.15em]">{topHalf}</span>
+            <span className="text-2xs tracking-[0.15em]">{topHalf}</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="w-8 text-3xs text-ink-200 text-right shrink-0">
+            <span className="w-10 text-2xs text-ink-200 text-right shrink-0">
               LO
             </span>
-            <span className="text-3xs tracking-[0.15em]">{bottomHalf}</span>
+            <span className="text-2xs tracking-[0.15em]">{bottomHalf}</span>
           </div>
           <div className="flex items-center gap-2 border-t border-ink-100 pt-1">
-            <span className="w-8 text-3xs text-ink-200 text-right shrink-0">
+            <span className="w-10 text-2xs text-ink-200 text-right shrink-0">
               XOR
             </span>
-            <span className="text-3xs tracking-[0.15em] font-medium">{result}</span>
+            <span className="text-2xs tracking-[0.15em] font-medium">{result}</span>
           </div>
         </div>
       </div>
 
-      <div className="border border-ink-100 p-2">
-        <div className="text-3xs text-ink-200 mb-2">
+      <div className="border border-ink-100 p-3">
+        <div className="text-2xs text-ink-200 mb-2">
           Byte value density (32 buckets of 8)
         </div>
-        <div className="flex items-end gap-px" style={{ height: '64px' }}>
+        <div className="flex items-end gap-px" style={{ height: '96px' }}>
           {byteDensity.map((count, i) => {
-            const h = maxDensity > 0 ? Math.max(1, Math.round((count / maxDensity) * 64)) : 0;
+            const h = maxDensity > 0 ? Math.max(1, Math.round((count / maxDensity) * 96)) : 0;
             return (
               <div
                 key={i}
@@ -59,9 +59,9 @@ export default function XorFoldBlock({ bare, xorFold, byteDensity }: XorFoldBloc
           })}
         </div>
         <div className="flex justify-between mt-1">
-          <span className="text-[5px] text-ink-200">0x00</span>
-          <span className="text-[5px] text-ink-200">0x80</span>
-          <span className="text-[5px] text-ink-200">0xFF</span>
+          <span className="text-3xs text-ink-200">0x00</span>
+          <span className="text-3xs text-ink-200">0x80</span>
+          <span className="text-3xs text-ink-200">0xFF</span>
         </div>
       </div>
     </div>

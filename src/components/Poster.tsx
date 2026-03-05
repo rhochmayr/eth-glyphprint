@@ -24,17 +24,23 @@ const Poster = forwardRef<HTMLDivElement, PosterProps>(({ data }, ref) => {
     <div
       ref={ref}
       className="bg-paper-50 mx-auto poster-root"
-      style={{ fontFeatureSettings: '"tnum" 1, "zero" 1', width: '1200px', minWidth: '1200px' }}
+      style={{
+        fontFeatureSettings: '"tnum" 1, "zero" 1',
+        width: '1800px',
+        minWidth: '1800px',
+        height: '2700px',
+        overflow: 'hidden',
+      }}
     >
-      <div className="p-14">
+      <div className="p-10 flex flex-col" style={{ height: '2700px' }}>
         <HeaderBlock
           address={data.original}
           checksummed={data.checksummed}
           timestamp={data.timestamp}
         />
 
-        <div className="grid grid-cols-2 gap-10 mt-6">
-          <div className="space-y-8">
+        <div className="grid grid-cols-2 gap-8 mt-5 flex-1 min-h-0">
+          <div className="space-y-6">
             <EncodingTable
               bare={data.bare}
               decimal={data.decimal}
@@ -44,14 +50,17 @@ const Poster = forwardRef<HTMLDivElement, PosterProps>(({ data }, ref) => {
               reversed={data.reversed}
             />
 
-            <ByteIndexTable bytes={data.bytes} />
-
-            <BinaryWaterfall
-              binaryHashes={data.binaryHashes}
-              addressBinary={data.binary}
+            <HashBlock
+              sha256={data.sha256}
+              sha512={data.sha512}
+              doubleSha256={data.doubleSha256}
+              keccak={data.keccak}
+              keccakOfKeccak={data.keccakOfKeccak}
             />
 
-            <NibbleMatrix nibbleMatrix={data.nibbleMatrix} />
+            <ByteIndexTable bytes={data.bytes} />
+
+            <BitfieldGrid bitGrid={data.bitGrid} binary={data.binary} />
 
             <HashCascade hashCascade={data.hashCascade} keccak={data.keccak} />
 
@@ -62,20 +71,17 @@ const Poster = forwardRef<HTMLDivElement, PosterProps>(({ data }, ref) => {
             />
           </div>
 
-          <div className="space-y-8">
-            <HashBlock
-              sha256={data.sha256}
-              sha512={data.sha512}
-              doubleSha256={data.doubleSha256}
-              keccak={data.keccak}
-              keccakOfKeccak={data.keccakOfKeccak}
-            />
-
-            <BitfieldGrid bitGrid={data.bitGrid} binary={data.binary} />
+          <div className="space-y-6">
+            <ChecksumMap checksumNibbles={data.checksumNibbles} />
 
             <FrequencyChart hexFrequency={data.hexFrequency} />
 
-            <ChecksumMap checksumNibbles={data.checksumNibbles} />
+            <BinaryWaterfall
+              binaryHashes={data.binaryHashes}
+              addressBinary={data.binary}
+            />
+
+            <NibbleMatrix nibbleMatrix={data.nibbleMatrix} />
 
             <CoordinatePoints coordinates={data.coordinates} />
 

@@ -5,8 +5,8 @@ interface FooterBlockProps {
 
 export default function FooterBlock({ address, timestamp }: FooterBlockProps) {
   return (
-    <div className="col-span-full border-t border-ink-200 pt-4 mt-4">
-      <div className="flex flex-wrap justify-between gap-4 text-3xs text-ink-200">
+    <div className="col-span-full border-t border-ink-200 pt-6 mt-auto">
+      <div className="flex flex-wrap justify-between gap-4 text-2xs text-ink-200">
         <div className="space-y-0.5">
           <div>ETH GLYPHPRINT</div>
           <div>A deterministic typographic derivation</div>
@@ -18,8 +18,8 @@ export default function FooterBlock({ address, timestamp }: FooterBlockProps) {
           <div>Every element is derived solely from the input address</div>
         </div>
       </div>
-      <div className="mt-4 border-t border-ink-100 pt-2 text-center">
-        <span className="text-3xs text-ink-100 tracking-[0.5em] uppercase">
+      <div className="mt-4 border-t border-ink-100 pt-3 text-center">
+        <span className="text-2xs text-ink-100 tracking-[0.6em] uppercase">
           This artwork is unique and unrepeatable for any other address
         </span>
       </div>

@@ -58,13 +58,14 @@ export default function App() {
 
       const container = document.createElement('div');
       container.style.cssText =
-        'position:fixed;left:-20000px;top:0;width:1200px;overflow:visible;';
+        'position:fixed;left:-20000px;top:0;width:1800px;overflow:visible;';
       document.body.appendChild(container);
 
       const clone = source.cloneNode(true) as HTMLElement;
       clone.style.margin = '0';
-      clone.style.width = '1200px';
-      clone.style.minWidth = '1200px';
+      clone.style.width = '1800px';
+      clone.style.minWidth = '1800px';
+      clone.style.height = '2700px';
       container.appendChild(clone);
 
       await new Promise((r) => requestAnimationFrame(r));
@@ -72,8 +73,8 @@ export default function App() {
       const dataUrl = await toPng(clone, {
         pixelRatio: 2,
         backgroundColor: '#faf9f6',
-        width: 1200,
-        height: clone.scrollHeight,
+        width: 1800,
+        height: 2700,
         fontEmbedCSS: '',
         cacheBust: true,
       });
@@ -98,7 +99,7 @@ export default function App() {
     return (
       <div className="min-h-screen bg-paper-100">
         <div className="sticky top-0 z-10 bg-paper-100/90 backdrop-blur-sm border-b border-ink-100">
-          <div className="max-w-[1200px] mx-auto px-4 py-3 flex items-center justify-between">
+          <div className="max-w-[1800px] mx-auto px-4 py-3 flex items-center justify-between">
             <button
               onClick={handleBack}
               className="flex items-center gap-2 text-xs text-ink-300 hover:text-ink-500 transition-colors"

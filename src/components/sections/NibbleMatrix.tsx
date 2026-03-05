@@ -8,21 +8,21 @@ export default function NibbleMatrix({ nibbleMatrix }: NibbleMatrixProps) {
 
   return (
     <div>
-      <div className="text-2xs text-ink-300 tracking-[0.2em] uppercase mb-3">
+      <div className="text-xs text-ink-300 tracking-[0.2em] uppercase mb-3">
         XI. Nibble Transition Matrix
       </div>
-      <div className="border border-ink-100 p-2">
-        <div className="text-3xs text-ink-200 mb-1.5">
+      <div className="border border-ink-100 p-3">
+        <div className="text-2xs text-ink-200 mb-2">
           Row = from nibble, Col = to nibble, Cell = transition count
         </div>
         <div className="overflow-x-auto">
           <div className="inline-block">
             <div className="flex">
-              <span className="w-5 h-5 shrink-0" />
+              <span className="w-6 h-6 shrink-0" />
               {hexChars.map((c) => (
                 <span
                   key={c}
-                  className="w-5 h-5 shrink-0 text-3xs text-ink-300 text-center leading-5"
+                  className="w-6 h-6 shrink-0 text-2xs text-ink-300 text-center leading-6"
                 >
                   {c}
                 </span>
@@ -30,7 +30,7 @@ export default function NibbleMatrix({ nibbleMatrix }: NibbleMatrixProps) {
             </div>
             {nibbleMatrix.map((row, r) => (
               <div key={r} className="flex">
-                <span className="w-5 h-5 shrink-0 text-3xs text-ink-300 text-center leading-5">
+                <span className="w-6 h-6 shrink-0 text-2xs text-ink-300 text-center leading-6">
                   {hexChars[r]}
                 </span>
                 {row.map((val, c) => {
@@ -38,7 +38,7 @@ export default function NibbleMatrix({ nibbleMatrix }: NibbleMatrixProps) {
                   return (
                     <span
                       key={c}
-                      className="w-5 h-5 shrink-0 text-center leading-5 text-[5px]"
+                      className="w-6 h-6 shrink-0 text-center leading-6 text-3xs"
                       style={{
                         backgroundColor:
                           val > 0
