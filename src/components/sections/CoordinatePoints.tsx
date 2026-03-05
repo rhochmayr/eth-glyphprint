@@ -48,7 +48,7 @@ export default function CoordinatePoints({ coordinates }: CoordinatePointsProps)
 
       <div className="border border-ink-100 mt-3 p-3">
         <div className="text-2xs text-ink-200 mb-1">COORDINATE PLOT (256 x 256)</div>
-        <div className="relative w-full bg-paper-100 border border-ink-50" style={{ height: '340px' }}>
+        <div className="relative w-full aspect-square bg-paper-100 border border-ink-50">
           {coordinates.map((coord, i) => (
             <div
               key={i}

@@ -39,7 +39,7 @@ const Poster = forwardRef<HTMLDivElement, PosterProps>(({ data }, ref) => {
           timestamp={data.timestamp}
         />
 
-        <div className="grid grid-cols-2 gap-8 mt-5">
+        <div className="grid grid-cols-2 gap-8 mt-5 flex-1 min-h-0">
           <div className="space-y-6">
             <EncodingTable
               bare={data.bare}
@@ -58,12 +58,9 @@ const Poster = forwardRef<HTMLDivElement, PosterProps>(({ data }, ref) => {
               keccakOfKeccak={data.keccakOfKeccak}
             />
 
-            <BitfieldGrid bitGrid={data.bitGrid} binary={data.binary} />
+            <ByteIndexTable bytes={data.bytes} />
 
-            <BinaryWaterfall
-              binaryHashes={data.binaryHashes}
-              addressBinary={data.binary}
-            />
+            <BitfieldGrid bitGrid={data.bitGrid} binary={data.binary} />
 
             <HashCascade hashCascade={data.hashCascade} keccak={data.keccak} />
 
@@ -79,7 +76,10 @@ const Poster = forwardRef<HTMLDivElement, PosterProps>(({ data }, ref) => {
 
             <FrequencyChart hexFrequency={data.hexFrequency} />
 
-            <ByteIndexTable bytes={data.bytes} />
+            <BinaryWaterfall
+              binaryHashes={data.binaryHashes}
+              addressBinary={data.binary}
+            />
 
             <NibbleMatrix nibbleMatrix={data.nibbleMatrix} />
 
